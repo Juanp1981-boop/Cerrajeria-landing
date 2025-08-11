@@ -24,11 +24,66 @@
             padding: 0 20px;
         }
         
-        /* Hero Section */
+        /* Header Section */
+        .header {
+            background: white;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+            padding: 15px 0;
+        }
+        
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        .logo {
+            display: flex;
+            align-items: center;
+        }
+        
+        .logo img {
+            height: 50px;
+            width: auto;
+            max-width: 200px;
+        }
+        
+        .header-phone {
+            background: #ff6b35;
+            color: white;
+            padding: 12px 25px;
+            text-decoration: none;
+            border-radius: 25px;
+            font-weight: bold;
+            font-size: 1.1em;
+            transition: all 0.3s ease;
+            box-shadow: 0 3px 10px rgba(255, 107, 53, 0.3);
+        }
+        
+        .header-phone:hover {
+            background: #e55a2b;
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(255, 107, 53, 0.4);
+        }
+        
+        .header-phone::before {
+            content: "📞 ";
+            margin-right: 5px;
+        }
+        
+        /* Ajustar el hero para el header fijo */
         .hero {
             background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
             color: white;
-            padding: 60px 0;
+            padding: 140px 0 60px 0; /* Padding top aumentado para el header fijo */
             text-align: center;
             position: relative;
             overflow: hidden;
@@ -293,6 +348,25 @@
         
         /* Responsive */
         @media (max-width: 768px) {
+            .header-content {
+                flex-direction: column;
+                gap: 15px;
+                padding: 10px 20px;
+            }
+            
+            .logo img {
+                height: 40px;
+            }
+            
+            .header-phone {
+                font-size: 1em;
+                padding: 10px 20px;
+            }
+            
+            .hero {
+                padding: 160px 0 60px 0;
+            }
+            
             .hero h1 {
                 font-size: 2.2em;
             }
@@ -346,6 +420,17 @@
     </style>
 </head>
 <body>
+    <!-- Header -->
+    <header class="header">
+        <div class="header-content">
+            <div class="logo">
+                <!-- IMPORTANTE: Reemplaza esta URL con la URL directa de tu imagen -->
+                <img src="https://i.ibb.co/7J3z0nGS/tu-imagen.png" alt="Cerrajería Barranquilla Logo">
+            </div>
+            <a href="tel:+573242375661" class="header-phone">3242375661</a>
+        </div>
+    </header>
+
     <section class="hero">
         <div class="container">
             <div class="hero-content">
