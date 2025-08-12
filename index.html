@@ -26,14 +26,15 @@
         
         /* Header Section */
         .header {
-            background: white;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            background: linear-gradient(135deg, rgba(30, 60, 114, 0.95) 0%, rgba(42, 82, 152, 0.95) 100%);
+            backdrop-filter: blur(10px);
+            box-shadow: 0 4px 20px rgba(0,0,0,0.15);
             position: fixed;
             top: 0;
             left: 0;
             right: 0;
             z-index: 1000;
-            padding: 15px 0;
+            padding: 20px 0;
         }
         
         .header-content {
@@ -48,42 +49,59 @@
         .logo {
             display: flex;
             align-items: center;
+            gap: 15px;
         }
         
         .logo img {
-            height: 50px;
+            height: 80px;
             width: auto;
-            max-width: 200px;
+            max-width: 80px;
+            filter: drop-shadow(0 2px 8px rgba(0,0,0,0.3));
+        }
+        
+        .logo-text {
+            color: white;
+            font-size: 1.8em;
+            font-weight: bold;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+        
+        .logo-subtitle {
+            color: rgba(255,255,255,0.9);
+            font-size: 0.9em;
+            font-weight: normal;
+            margin-top: 2px;
         }
         
         .header-phone {
-            background: #ff6b35;
+            background: transparent;
             color: white;
-            padding: 12px 25px;
+            padding: 15px 30px;
             text-decoration: none;
-            border-radius: 25px;
+            border-radius: 30px;
             font-weight: bold;
-            font-size: 1.1em;
+            font-size: 1.2em;
             transition: all 0.3s ease;
-            box-shadow: 0 3px 10px rgba(255, 107, 53, 0.3);
+            border: 2px solid white;
         }
         
         .header-phone:hover {
-            background: #e55a2b;
+            background: rgba(255,255,255,0.1);
             transform: translateY(-2px);
-            box-shadow: 0 5px 15px rgba(255, 107, 53, 0.4);
+            box-shadow: 0 5px 15px rgba(255,255,255,0.2);
         }
         
         .header-phone::before {
             content: "📞 ";
-            margin-right: 5px;
+            margin-right: 8px;
+            font-size: 1.1em;
         }
         
         /* Ajustar el hero para el header fijo */
         .hero {
             background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
             color: white;
-            padding: 140px 0 60px 0; /* Padding top aumentado para el header fijo */
+            padding: 160px 0 80px 0; /* Padding top aumentado para el header más grande */
             text-align: center;
             position: relative;
             overflow: hidden;
@@ -128,6 +146,13 @@
             font-weight: bold;
             box-shadow: 0 4px 15px rgba(255, 71, 87, 0.3);
             animation: pulse 2s infinite;
+            transition: all 0.3s ease;
+            display: block;
+        }
+        
+        .emergency-banner:hover {
+            transform: scale(1.02);
+            box-shadow: 0 6px 20px rgba(255, 71, 87, 0.4);
         }
         
         @keyframes pulse {
@@ -348,6 +373,10 @@
         
         /* Responsive */
         @media (max-width: 768px) {
+            .header {
+                padding: 15px 0;
+            }
+            
             .header-content {
                 flex-direction: column;
                 gap: 15px;
@@ -355,16 +384,24 @@
             }
             
             .logo img {
-                height: 40px;
+                height: 60px;
+            }
+            
+            .logo-text {
+                font-size: 1.4em;
+            }
+            
+            .logo-subtitle {
+                font-size: 0.8em;
             }
             
             .header-phone {
                 font-size: 1em;
-                padding: 10px 20px;
+                padding: 12px 25px;
             }
             
             .hero {
-                padding: 160px 0 60px 0;
+                padding: 200px 0 60px 0;
             }
             
             .hero h1 {
@@ -426,6 +463,10 @@
             <div class="logo">
                 <!-- IMPORTANTE: Reemplaza esta URL con la URL directa de tu imagen -->
                 <img src="https://i.ibb.co/7J3z0nGS/tu-imagen.png" alt="Cerrajería Barranquilla Logo">
+                <div>
+                    <div class="logo-text">Cerrajería La Cima De Dios</div>
+                    <div class="logo-subtitle">Servicio 24 Horas</div>
+                </div>
             </div>
             <a href="tel:+573242375661" class="header-phone">3242375661</a>
         </div>
@@ -435,14 +476,13 @@
         <div class="container">
             <div class="hero-content">
                 <h1>Tu Cerrajería Online en Barranquilla</h1>
-                <h2>Servicio profesional a domicilio para casas, autos y empresas las 24 horas</h2>
+                <p class="subtitle">Servicio profesional a domicilio para casas, autos y empresas las 24 horas</p>
                 
-                <div class="emergency-banner">
+                <a href="tel:+573242375661" class="emergency-banner" style="text-decoration: none; color: white; cursor: pointer;">
                     🚨 ¿TE QUEDASTE POR FUERA DE TU CASA O AUTO? ¡ATENDEMOS EMERGENCIAS YA! 🚨
-                </div>
+                </a>
                 
                 <a href="tel:+573242375661" class="cta-button">📞 Llamar Ahora: 324-237-5661</a>
-                <a href="https://wa.me/573242375661?text=Hola,%20necesito%20información%20sobre%20sus%20servicios%20de%20cerrajería" class="cta-button cta-secondary">📱 WhatsApp: 324-237-5661</a>
             </div>
         </div>
     </section>
@@ -574,7 +614,7 @@
         <div class="container">
             <div class="footer-content">
                 <div>
-                    <h3>🔑 Cerrajería Barranquilla</h3>
+                    <h3>🔑 Cerrajería La Cima De Dios</h3>
                     <p>Tu cerrajero de confianza disponible 24/7</p>
                     <p>Servicio profesional en toda la ciudad</p>
                 </div>
